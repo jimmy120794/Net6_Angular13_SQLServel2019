@@ -1,0 +1,68 @@
+
+/*CREAR DB*/
+CREATE DATABASE inspectionapidb
+
+/*USAR DB*/
+use inspectionapidb
+
+/*CREAR TABLAS*/
+CREATE TABLE InspectionType(
+	id int identity(1,1) primary key not null,
+	inspectionName varchar(20),
+);
+
+CREATE TABLE Inspection(
+	id int identity(1,1) primary key not null,
+	inspectionTypeId int not null,
+	status varchar(20),
+	comments varchar(2000),
+
+	CONSTRAINT fk_InspectionType FOREIGN KEY (inspectionTypeId) REFERENCES InspectionType (id),
+);
+
+CREATE TABLE Status(
+	id int identity(1,1) primary key not null,
+	statusOption varchar(20),
+);
+
+/*ELIMINAR TABLA*/
+DROP TABLE [inspectionapidb].[dbo].[Inspection];
+
+/*VACIAR TODOS LOS REGISTROS DE UNA TABLA*/
+delete from [inspectionapidb].[dbo].[InspectionType];
+delete from [inspectionapidb].[dbo].[Status];
+delete from [inspectionapidb].[dbo].[Inspection];
+
+/*SELECCIONAR LAS 2 PRIMERAS REGISTROS DE LA TABLA STATUS*/
+SELECT TOP 2 id, statusOption FROM inspectionapidb.dbo.status
+SELECT TOP 50 PERCENT [id], [statusOption] FROM [inspectionapidb].[dbo].[status]
+
+/*SELECCIONAR TODOS LOS REGISTROS DE LA TABLA status Y QUE ESTEN ORDENADOS DE FORMAS DESCENDENTE
+POR CAMPO statusOption*/
+SELECT *
+FROM inspectionapidb.dbo.status
+ORDER BY statusOption DESC
+
+/*SELECCIONAR TODOS LOS REGISTROS DE LA TABLA status QUUE TENGAN ID 2 Y 4. 
+Y QUE ESTEN ORDENADOS DE FORMAS DESCENDENTE
+POR CAMPO statusOption*/
+SELECT *
+FROM inspectionapidb.dbo.status
+--WHERE id = 6 OR id = 8 
+WHERE id in (6,8)
+
+
+/*CONSULTAS EN MULTITABLAS*/
+
+/*Inner Join*/
+
+
+
+
+
+
+
+
+
+
+
