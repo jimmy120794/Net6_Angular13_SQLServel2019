@@ -1,6 +1,6 @@
 <!-- Add inspection trigger modal -->
-<button type="button" class="btn btn-primary float-end m-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop" (click)="modalAdd()">
-  Agregar Inspección
+<button type="button" class="btn btn-primary float-end m-2" (click)="openDialog2()">
+    Agregar Inspección
 </button>
 
 <!-- Button trigger modal -->
@@ -42,7 +42,7 @@
     </tbody>
 </table>
 
-<div class="alert alert-success" role="alert" id="add-success-alert">
+<div class="alert alert-warning" role="alert" id="add-success-alert">
     Inpección agregada!
 </div>
 
@@ -50,7 +50,7 @@
     Inpección actualizada!
 </div>
 
-<div class="alert alert-success" role="alert" id="delete-success-alert">
+<div class="alert alert-danger" role="alert" id="delete-success-alert">
     Inpección eliminada!
 </div>
 

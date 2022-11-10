@@ -9,20 +9,31 @@ import { ShowInspectionComponent } from './inspection/show-inspection/show-inspe
 import { AddEditInspectionComponent } from './inspection/add-edit-inspection/add-edit-inspection.component';
 import { InspectionApiService } from './inspection-api.service';
 
+//Angular Material
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogAddInspection } from './inspection/show-inspection/show-inspection.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     InspectionComponent,
     ShowInspectionComponent,
-    AddEditInspectionComponent
+    AddEditInspectionComponent,
+    DialogAddInspection
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+
   ],
   providers: [InspectionApiService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+
 })
 export class AppModule { }
